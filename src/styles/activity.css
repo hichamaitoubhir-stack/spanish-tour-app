@@ -1,0 +1,130 @@
+
+
+.activity-grid {
+  
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.activity-card {
+  background: #69d885;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 320px;
+  transition: transform 0.3s ease;
+  position: relative;
+  margin-block: 40px;
+  
+}
+
+.activity-card img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.activity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Offer label */
+.special-offer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #E6542E;
+  color:white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Meta info (duration + reviews) */
+.activity-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.activity-meta .duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  
+}
+
+.activity-meta .stars {
+  color: #140e05;
+  font-weight: 400;
+}
+
+/* Title + description */
+.activity-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 12px;
+}
+
+.activity-description {
+  font-size: 14px;
+  color: #555;
+  margin: 0 12px 8px;
+}
+
+/* Price */
+.price {
+  margin: 0 12px 10px;
+  font-size: 16px;
+}
+
+.price .old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 6px;
+}
+
+.price .new-price {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Free cancellation */
+.free-cancellation {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 12px 15px;
+  color: #2e7d32;
+  /* text-decoration:dotted; */
+}
+
+.book-btn{
+  display: flex;
+  gap: 60px;
+}
+
+.book-btn button{
+  border: none;
+  
+  padding: 4px 15px;
+  background-color: rgb(15, 156, 15);
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.book-btn button:hover {
+  background-color: rgb(5, 87, 5);
+    
+  color: #0D1A26;
+}

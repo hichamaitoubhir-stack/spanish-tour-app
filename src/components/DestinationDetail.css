@@ -1,0 +1,252 @@
+/* DestinationDetail.css */
+
+.destination-detail-container {
+  max-width: 500px;
+  margin: 5px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.destination-detail-back-btn {
+  
+  padding: 10px 60px;
+  margin-top: 60px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.destination-detail-back-btn:hover {
+  background-color: #45a049;
+}
+
+.destination-detail-name {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 2.2rem;
+}
+
+.destination-detail-image {
+ width: 320px;
+ height: 300px;
+  display: block;
+  margin: 0 auto 25px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.destination-detail-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.destination-detail-price {
+  text-align: center;
+  color: #e91e63;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/* ============boooking formula============ */
+
+.booking-formula {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.booking-formula h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.booking-formula label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.booking-formula input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-formula button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.booking-formula button:hover {
+  background: #218838;
+}
+
+.grid-booking{
+
+  display: flex;
+  flex-wrap: wrap;
+}
+ /* =================tour info=============== */
+ .tour-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 990px;
+}
+
+.tour-info span {
+  flex:1 1 1 10px;
+  text-align: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tour-info span:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.tour-info h3 {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-info h3 .icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: #0077b6; /* choose accent color */
+}
+
+.tour-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+ /* ================end tour info============== */
+
+
+.tour-description{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+/* ==================deja resena ============= */
+.deja-resena {
+  width: 100%;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Arial', sans-serif;
+}
+
+.deja-resena h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.deja-resena form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label */
+.deja-resena label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Nombre input (only border-bottom) */
+.deja-resena input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.deja-resena input[type="text"]:focus {
+  border-bottom: 2px solid #E6542E; /* accent color */
+}
+
+/* Textarea */
+.deja-resena textarea {
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  min-height: 100px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.deja-resena textarea:focus {
+
+  border-color:#E6542E;
+;
+}
+
+/* Button */
+.deja-resena button {
+  background:  #E6542E;
+
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.deja-resena button:hover {
+  background: #7aa00d;
+  transform: translateY(-2px);
+}
+
+.deja-resena button:active {
+  transform: translateY(0);
+}
