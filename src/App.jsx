@@ -8,13 +8,18 @@ import Tours from "./fulldaytours";
 import Footer from "./footer";
 import WhatsAppButton from "./whatsAppButton";
 import Activities from "./activities";
-
+import Desert from "./desert";
 import destinacion from "./data/destination";
-
+import Contact from "./contact";
+import SearchBox from "./components/SearchBox";
 import DestinationDetail from "./components/DestinationDetail";
-
+import { useNavigate } from "react-router-dom";
+import {  FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { FileText, CheckCircle, XCircle, Map, Scale , Info, ShieldAlert, ScrollText } from "lucide-react";
+import { FaHome, FaUmbrellaBeach, FaHiking, FaCity, FaEnvelope } from "react-icons/fa";
+import "./styles/Topbar.css";
 
 
 
@@ -23,12 +28,24 @@ function App() {
   const destinations = getDestinations();
   const [open, setOpen] = React.useState(false);
 
-  
+ function scrollToSection(e, id) {
+  e.preventDefault();
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+} 
   
 function handleBookbutton(){
     alert('button is Clicked')
 }
 
+
+function handleSelect(item) {
+// do what you want when a tour is selected
+// navigate, show details, etc. For this demo we just alert
+  navigate(`/tour/${item.id}`);
+}
    return (
     <>
       <>
@@ -39,23 +56,31 @@ function handleBookbutton(){
       {/* ================= HEADER ================= */}
       <section className="header">
         {/* --------- Top Bar --------- */}
-        <div className="top-bar">
-          <div className="right-section"></div>
-          <div className="social-icons">
-            <span className="whatsapp">
-              <div className="search-box">
-                <input type="text" placeholder="Inserte palabra clave" />
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </div>
-              <div className="phone-section">
-                <i className="fab fa-whatsapp"></i> +212 606 12 50 22
-              </div>
-            </span>
-            <div>
-              <i className="fab fa-instagram"></i>
-            </div>
-          </div>
-        </div>
+      <div className="top-bar">
+  <div className="left-section">
+    {/* Search Box */}
+    <SearchBox 
+      items={destinations} 
+      minChars={1} 
+      placeholder="Inserte palabra clave" 
+      onSelect={handleSelect} 
+    />
+  </div>
+
+  <div className="social-icons">
+    {/* Phone Section */}
+    <div className="phone-section">
+       <FaWhatsapp className="icon whatsapp" />
+        <span>+212 606 125 022</span>
+    </div>
+
+    {/* Instagram */}
+    <div className="instagram-section">
+      <FaInstagram className="icon instagram" />
+    </div>
+  </div>
+</div>
+
 
         {/* --------- Bottom Navigation --------- */}
         <nav className="bottom-nav">
@@ -68,13 +93,61 @@ function handleBookbutton(){
           </div>
 
           {/* ✅ Used <Link> instead of <a> for Home page navigation */}
-          <ul className={`nav-links ${open ? "open" : ""}`}>
-            <li><Link to="/" className="active">Inicio</Link></li>
-            <li><a href="#">Tours al desierto</a></li>
-            <li><a href="#">Excursiones de un día</a></li>
-            <li><a href="#">Actividades en Marrakech</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
+       
+
+<ul className={`nav-links ${open ? "open" : ""}`}>
+  <li>
+    <Link to="/" className="nav-item">
+      <span className="nav-icon-wrap"><FaHome className="nav-icon" /></span>
+      <span className="nav-label">Inicio</span>
+    </Link>
+  </li>
+
+  <li>
+    <a
+      href="#desert-tours"
+      onClick={(e) => scrollToSection(e, "desert-tours")}
+      className="nav-item"
+    >
+      <span className="nav-icon-wrap"><FaUmbrellaBeach className="nav-icon" /></span>
+      <span className="nav-label">Tours al desierto</span>
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#one-day-excursions"
+      onClick={(e) => scrollToSection(e, "one-day-excursions")}
+      className="nav-item"
+    >
+      <span className="nav-icon-wrap"><FaHiking className="nav-icon" /></span>
+      <span className="nav-label">Excursiones de un día</span>
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#marrakech-activities"
+      onClick={(e) => scrollToSection(e, "marrakech-activities")}
+      className="nav-item"
+    >
+      <span className="nav-icon-wrap"><FaCity className="nav-icon" /></span>
+      <span className="nav-label">Actividades en Marrakech</span>
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#contact"
+      onClick={(e) => scrollToSection(e, "contact")}
+      className="nav-item"
+    >
+      <span className="nav-icon-wrap"><FaEnvelope className="nav-icon" /></span>
+      <span className="nav-label">Contacto</span>
+    </a>
+  </li>
+</ul>
+
         </nav>
       </section>
 
@@ -85,13 +158,15 @@ function handleBookbutton(){
           path="/"
           element={
             <>
-              <Intro />
-
+              <section><Intro /></section>
+               <section id="one-day-excursions"><Tours duration="1 day" /></section>
               {/* ================= POPULAR DESTINATIONS ================= */}
               <section className="popular-destinations">
                 <h2>Destinos Populares</h2>
                 <p style={{textAlign:"center"}}>Un buen servicio en todos nuestros tours conmigos</p>
                 <div className="destinations-grid">
+            
+            
                   {destinations.map((dest) => (
                     <div key={dest.id} className="destination-card">
                       <div className="image-container">
@@ -136,9 +211,9 @@ function handleBookbutton(){
               </section>
 
               {/* ✅ Extra sections remain the same */}
-              <section><Tours duration="1 day" /></section>
-              <section><Activities /></section>
-                      
+                <section  id="desert-tours"><Desert/></section>
+              <section id="marrakech-activities"><Activities /></section>
+              <section id="contact" ><Contact/></section>
               <section><Footer /></section>
               <section><WhatsAppButton /></section>
             </>

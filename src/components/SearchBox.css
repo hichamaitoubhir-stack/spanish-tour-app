@@ -1,0 +1,39 @@
+
+.search-box {
+  position: relative;
+  padding-bottom :6px;
+}
+
+
+
+
+
+.search-box input:focus { box-shadow: 0 0 0 3px rgba(246, 247, 245, 0.15)15); }
+
+/* suggestions dropdown */
+.suggestions {
+  
+  position: absolute;
+  top: calc(100% + -10px);
+  left: 0;
+  right: 90;
+  background: #FDBE3B;
+  color: #000;
+  border-radius: 8px;
+  max-height: 320px;
+  overflow: auto;
+  
+  text-align: left;
+
+  /* make sure it's above nav bar */
+  z-index: 9999;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 6px 0;
+}
+.suggestion { padding:8px 12px; cursor:pointer; }
+.suggestion:hover, .suggestion.active { color:#332929;background-color: #E6542E; }
+
+
+/* small responsive */
+

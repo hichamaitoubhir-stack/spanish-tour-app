@@ -133,3 +133,14 @@
 /* ====================popups============= */
 
 /* Overlay background */
+@media (max-width: 600px) {
+ 
+
+  .tour-card {
+  
+   margin-block: 10px;
+}
+
+
+  
+  }

@@ -32,15 +32,7 @@ body {
 }
 
 /* Top bar */
-.top-bar {
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-}
+
 
 .logo img {
   width: 130px;
@@ -78,10 +70,7 @@ body {
     font-weight:bold ;
     background-color: #03a326;
     border-radius: 25px;
-    
-   
-    
-    
+      
 }
  .fa-instagram {
     font-size: 1.2rem;
@@ -89,84 +78,81 @@ body {
     padding-right: 10px;
 } 
 
-.whatsapp .icon,
-.whatsapp i {
-  color: #fff;
-  font-size: 20px;
-  transition: 0.4 ease;
 
-}
-.whatsapp i:hover{
-  color: #cac1c1;
-  
 
-}
-.phone-section{
-  
-  padding-right: 15px;
-}
 
-.icons span {
-  margin: 0 8px;
-  cursor: pointer;
-  font-size: 20px;
- 
-}
+
+
 /* -----------search input----------- */
-.search-box {
-  position: relative;
-  display: inline-block;
-  margin-right: 10px;
-}
 
-.search-box input {
-  padding: 8px 12px 8px 45px; /* extra right padding for the icon */
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 14px;
-  outline: none;
-}
 
-.search-box i {
-  position: absolute;
-  font-size: 20px;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #b8afaf;
-  pointer-events: none; /* prevent blocking input clicks */
-}
+
 /* ------------------end search input----------- */
 
 /* Bottom nav */
+
 .bottom-nav {
   width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  /* margin-bottom: -100px; */
   z-index: 1000;
 }
 
-.nav-links {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-  transition: all 0.3s ease;
-  
+/* ---nav links---- */
+/* layout for the list itself (optional) */
+.nav-links { list-style: none; 
+  display: flex; 
+ 
+  padding: 0; 
+  margin: 0; }
+
+/* make sure each item stacks icon above text */
+.nav-links li > a.nav-item,
+.nav-links li > .nav-item {
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  gap: 8px;
+  line-height: 1.1;
+  color: inherit;
+  /* border:1px solid #fff; */
+  padding: 12px 22px;
+  box-shadow: 3px 0px 12px rgba(0,0,0,0.08);
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-  background: #FDBE3B;
-  color: #fff;
+/* icon sizing */
+.nav-icon-wrap { display: block; }
+.nav-icon { width: 1.4rem; height: 1.4rem; color :#C84425}
+
+/* label */
+.nav-label { font-size: 0.9rem; }
+
+/* hover state */
+.nav-links li > a.nav-item:hover { color: #E6542E; }
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .nav-icon { width: 1.2rem; height: 1.2rem; }
+  .nav-label { font-size: 0.8rem; }
 }
+/* ----nav links----- */
+
+
 
 /* Hamburger Menu (hidden on desktop) */
 .menu-toggle {
   display: none;
   font-size: 24px;
   cursor: pointer;
+  position: relative;
+  z-index: 2000; /* higher than suggestions */
 }
 .bottom-nav ul {
   display: flex;
@@ -181,8 +167,7 @@ body {
   display: inline-block;
   padding: 8px 16px;
   border: transparent;
-  /* border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px; */
+  border-radius: 15px;
   box-shadow: 0 2px 6px rgba(190, 187, 187, 0.1);
   color: #000;
   text-decoration: none;
@@ -202,21 +187,7 @@ body {
 }
 
 /* ---------------------social icons---------------- */
-.social-icons {
-  
-  display:flex;
-  gap: 16px;
-  font-size: 15px;
-  background-color:#fff;
-  border-radius: 20px;
-  justify-content: center;
-  align-content: center;
-  
-  
-  
- 
-  /* align-items: center; */
-}
+
 
 .social-icons i {
   cursor: pointer;
@@ -262,6 +233,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin: 30px 0;
+  
 }
 .destination-card {
   background: #f5f4f4;
@@ -383,7 +355,9 @@ body {
 }
 
 
-
+section {
+  scroll-margin-top: 65px; /* adjust based on your navbar height */
+}
 /* ===============small scree ========== */
 
 
@@ -395,12 +369,10 @@ body {
     color:  #C84425;
 ;
   }
-  .social-icons{
-    display: none;
-  }
+
   .nav-links {
     position: absolute;
-    top: 60px;
+    top: 75px;
     right: 0;
     background: white;
     flex-direction: column;
@@ -413,6 +385,7 @@ body {
   }
 
   .nav-links.open {
+    margin-top: 40px;
     opacity: 1;
     transform: translateX(0);
   }
@@ -439,6 +412,9 @@ body {
   font-size: 26px;
    white-space: nowrap;
  }
+
+
+
  
 }
 

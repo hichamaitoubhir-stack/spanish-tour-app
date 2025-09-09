@@ -13,9 +13,9 @@ return (
                 <img src={desert} alt="Marrakech" className="intro-image" />
                 <div className="intro-content">
                     <br />
-                    <h2>#1 <br/> Expertos Locales en el Desierto de Marruecos</h2>
-                    <p>Viaja con confianza y disfruta al máximo</p>
-                    <button className="intro-btn">Descubre Ofertas</button>
+                    <h2>#1 <br/> Viaja sin preocupaciones y crea recuerdos inolvidables</h2>
+                    <p>"Miles de viajeros satisfechos nos recomiendan"</p>
+                    <button className="intro-btn">Comienza Tu Viaje Hoy</button>
                 </div>
             </section>
 

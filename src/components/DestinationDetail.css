@@ -1,267 +1,114 @@
-/* DestinationDetail.css */
+.grid-booking {
+
+  display: grid;
+  grid-template-columns: 60% 30%; /* left and right */
+  gap: 10%; /* spacing between sections */
+  max-width: 1200px;
+  
+ margin-top: 80px;
+  padding: 20px;
+}
 
 .destination-detail-container {
-  max-width: 500px;
-  margin: 5px auto;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.destination-detail-back-btn {
-  
-  padding: 10px 60px;
-  margin-top: 60px;
-  border: none;
-  border-radius: 8px;
-  background-color: #4CAF50;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.destination-detail-back-btn:hover {
-  background-color: #45a049;
-}
-
-.destination-detail-name {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #333;
-  font-size: 2.2rem;
+/* image grid */
+.image-continner {
+  position: relative; /* for back button positioning */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 5px;
 }
 
 .destination-detail-image {
- width: 320px;
- height: 300px;
-  display: block;
-  margin: 0 auto 25px auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.destination-detail-description {
+/* back button inside image container */
+.destination-detail-back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* tour info row under images */
+.tour-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tour-info-row h2 {
   font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 20px;
-  text-align: justify;
+  margin: 0;
+  /* white-space: nowrap; */
 }
 
-.destination-detail-price {
-  text-align: center;
-  color: #e91e63;
-  font-size: 1rem;
+.tour-info-row .price {
   font-weight: bold;
+  color: green;
+  font-size: 1.4rem;
+  margin: 15px;
 }
 
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
 /* ============boooking formula============ */
 
 .booking-formula {
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #f9f9f9;
+  
+  background: #b6eeba;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.booking-formula h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.booking-formula label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-.booking-formula input {
+.booking-formula input,
+.booking-formula button {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 .booking-formula button {
-  width: 100%;
-  padding: 10px;
-  background: #28a745;
-  color: white;
+  background: #FDBE3B;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
 }
-
-.booking-formula button:hover {
-  background: #218838;
-}
-
-.grid-booking{
-
-  display: flex;
-  flex-wrap: wrap;
-}
- /* =================tour info=============== */
- .tour-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin: 20px auto;
-  max-width: 990px;
-}
-
-.tour-info span {
-  flex:1 1 1 10px;
-  text-align: center;
-  background: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tour-info span:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-}
-
-.tour-info h3 {
-  font-size: 1rem;
-  margin: 10px 0 5px;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tour-info h3 .icon {
-  font-size: 28px;
-  margin-bottom: 6px;
-  color: #0077b6; /* choose accent color */
-}
-
-.tour-info p {
-  font-size: 0.9rem;
-  color: #666;
-}
-
- /* ================end tour info============== */
-
-/* =========tour description========== */
-.tour-description{
- 
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-} 
-.tour-description h4{
-
-  text-align: left;
-}
-/* =========end tour description========== */
-
-
-
-/* ==================deja resena ============= */
-.deja-resena {
-  width: 100%;
-  margin: 20px auto;
-  padding: 15px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  font-family: 'Arial', sans-serif;
-}
-
-.deja-resena h3 {
-  text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.deja-resena form {
- 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Label */
-.deja-resena label {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 5px;
-}
-
-/* Nombre input (only border-bottom) */
-.deja-resena input[type="text"] {
-  border: none;
-  border-bottom: 2px solid #ccc;
-  padding: 10px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-  width: 50%;
-}
-
-.deja-resena input[type="text"]:focus {
-  border-bottom: 2px solid #E6542E; /* accent color */
-}
-
-/* Textarea */
-.deja-resena textarea {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 1rem;
-  min-height: 100px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.deja-resena textarea:focus {
-
-  border-color:#E6542E;
-;
-}
-
-/* Button */
-.deja-resena button {
-  display: block;       /* makes it behave like a block element */
-  margin: 10px auto 0;  /* auto left/right centers it */
-  background: #c74626;
+/* .booking-formula h2 {
+  background: #000;
   color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 4px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-
-.deja-resena button:hover {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-bottom: 1px solid green;
   
-  transform: translateY(-2px);
-  background:  #d46c52;
-}
+} */
 
-.deja-resena button:active {
-  transform: translateY(0);
+/* responsive */
+@media (max-width: 900px) {
+  .grid-booking {
+    grid-template-columns: 1fr;
+  }
 }
