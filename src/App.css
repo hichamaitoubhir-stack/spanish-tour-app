@@ -183,22 +183,22 @@ body {
   border: transparent;
   /* border-top-left-radius: 15px;
   border-bottom-right-radius: 15px; */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  color: #fff;
+  box-shadow: 0 2px 6px rgba(190, 187, 187, 0.1);
+  color: #000;
   text-decoration: none;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   transition: all 0.3s ease;
-  background-color: #42505e;
+  background: #fff;
 }
 
 /* Active and hover should target the <a>, not the <li> */
 .bottom-nav ul li a:hover,
 .bottom-nav ul li a.active {
   background: #FDBE3B;
-  color: #fff;
-  border-color: orange;
+  color: #990606;
+  border-color: #E6542E;
 }
 
 /* ---------------------social icons---------------- */

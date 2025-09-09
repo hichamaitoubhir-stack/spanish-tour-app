@@ -117,7 +117,8 @@ const [date, setDate] = React.useState("");
   <button 
     onClick={() =>
       alert(
-        `¡Reserva enviada!\nNombre: ${name}\nTeléfono: ${phone}\nPersonas: ${guests}\nFecha: ${date}\nTotal: $${dest.price * guests}`
+        `¡Reserva enviada!\nNombre: ${name}\nTeléfono: ${phone}\nPersonas: ${guests}\nFecha: 
+        ${date}\nTotal: $${dest.price * guests}`
       )
     }
   >
@@ -178,20 +179,20 @@ const [date, setDate] = React.useState("");
 
 <div className="tour-description">
 <div className="tour-description-left">
-<h3>Description</h3>
+<h4>Description</h4>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
     in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
   </p>
-  <h3>Incluido</h3>
-  <p>bebidas</p>
-  <p>guia local</p>
-  <p>transportante</p>
-  <h3>No incluido</h3>
-  <p>guia official</p>
-  <p>Dasayuno</p>
+  <h4>Incluido</h4>
+  <li>bebidas</li>
+  <li>guia local</li>
+  <li>transportante</li>
+  <h4>No incluido</h4>
+  <li>guia official</li>
+  <li>Dasayuno</li>
   </div>
  <div className="tour-description-right"> 
  <h2>Lo mas adactado</h2>
@@ -200,7 +201,7 @@ const [date, setDate] = React.useState("");
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
   </p>
-  <h3>Tragido del tour </h3>
+  <h4>Tragido del tour </h4>
 <p>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -221,14 +222,27 @@ const [date, setDate] = React.useState("");
 </p>
   </div>  
 </div>
-<h3 style={{textAlign:"center"}}>Dejanos un Comentario </h3>
+<h3 style={{
+
+  textAlign: "center",
+    backgroundColor: "#574f4fff",
+    color: "#fff",
+    padding: "12px 20px",
+    borderRadius: "10px",
+    fontSize: "1rem",
+    fontWeight: "600",
+    letterSpacing: "1px",
+    margin: "20px 0",
+
+}}>Dejanos un Comentario </h3>
 <div className="deja-resena">
       <form action="">
         
         <input type="text" placeholder="Nombre" />
         <textarea name="" id="" placeholder="tu comentario"></textarea>
-        <button>Submit</button>
+       
       </form>
+       <button>Submit</button>
       <div className="commentarios">
         <h5 style={{padding : "2px", background: "#585454ff", width :"50%", paddingLeft:"5px"}}>Cathrica jarra</h5>
         <p>Gracias , pasabamos un dia perfect con el chofer , muy amable y simpatico</p>

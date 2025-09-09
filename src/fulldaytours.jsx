@@ -46,7 +46,7 @@ function Tours({ duration }) {
             </div>
 
             {/* duration + reviews */}
-            <div className="cardtour-meta">
+            <div className="tour-meta">
               <span className="duration">⏱ {tour.duration}</span>
               <span className="stars"> ⭐⭐⭐⭐⭐ {tour.reviews} reseñas </span>
             </div>

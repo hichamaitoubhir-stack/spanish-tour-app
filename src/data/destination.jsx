@@ -29,7 +29,7 @@ const destinacion = [
                     },
                      ],
                 
-                    highlights: [
+                    highlightss: [
 
                             "Viaje panorámico por las montañas del Alto Atlas.",
                             "Explora el pintoresco valle de Ourika con sus pueblos bereberes.",

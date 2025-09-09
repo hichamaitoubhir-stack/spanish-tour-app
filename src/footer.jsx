@@ -13,14 +13,16 @@ function Footer(){
       <div className="footer-container">
         
         <div className="footer-section about">
+          
           <h3>Explora desierto</h3>
+          <div className="footer-logo">
+              <img src={tourLogo}alt="" />
+             </div>
           <p>Descubra auténticos tours marroquíes, aventuras en el desierto 
             y experiencias culturales con expertos locales.
          </p>
          
-             <div className="footer-logo">
-              <img src={tourLogo}alt="" />
-             </div>
+             
         </div>
 
         <div className="footer-section links">
