@@ -10,6 +10,12 @@ import farming from "./assets/images/farming.jpg"
 import cooking from "./assets/images/cooking.jpg"
 import rug from "./assets/images/Rug.jpeg"
 import benHadou from "./assets/images/benHadou.jpg"
+// import ourika1 from "./assets/images/ourika1.jpeg"
+// import ourika2 from "./assets/images/ourika2.webp"
+// import ourika4 from "./assets/images/ourika4.webp"
+// import ourika5 from "./assets/images/ourika5.jpg"
+// import ourika6 from "./assets/images/ourika6.webp"
+// import ourika7 from "./assets/images/ourika7.jpg"
 
 
 function getDestinations() {
@@ -25,7 +31,14 @@ function getDestinations() {
   price: 250,
   specialOffer: true,
   reviews: 59,
-
+  // images: [
+  //     ourika1,
+  //     ourika2,
+  //     ourika4,
+  //     ourika5,
+  //     ourika6,
+  //     ourika7,
+  //   ],
   description:
     "Enjoy a full-day excursion to the Ourika Valley with waterfalls, local villages, and breathtaking mountain views.",
 

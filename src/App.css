@@ -5,7 +5,10 @@
   --dune-dark: #C84425;
   --camel-color: #0D1A26;
 }
-
+::selection{
+  background-color:#C84425 ;
+  color: #fff;
+}
 .text {
     font-family: 'Poppins', sans-serif;
     font-weight: 700; /* Use numerical weights for precision */

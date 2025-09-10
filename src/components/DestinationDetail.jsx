@@ -46,16 +46,29 @@ const [date, setDate] = React.useState("");
 
     <div className="destination-detail-container">
     <div className="image-continner">
-      <button
-        className="destination-detail-back-btn"
-        onClick={() => navigate(-1)}
-      >
-        ← Back
-      </button>
-      <img src={dest.image} alt={dest.name} className="destination-detail-image" />
-      <img src={dest.image} alt={dest.name} className="destination-detail-image" />
-      <img src={dest.image} alt={dest.name} className="destination-detail-image" />
-      <img src={dest.image} alt={dest.name} className="destination-detail-image" />
+    {dest.images && dest.images.length > 0 ? (
+  <div className="image-grid">
+    {dest.images.slice(0, 4).map((img, i) => (
+      <div key={i} className="image-wrapper">
+        <img 
+          src={img}  
+          alt={`${dest.name} ${i + 1}`} 
+          className="grid-image" 
+        />
+        {i === 0 && (  // only show button on the first image
+          <button
+            className="back-button-overlay"
+            onClick={() => navigate(-1)}
+          >
+            ← Back
+          </button>
+        )}
+      </div>
+    ))}
+  </div>
+) : (
+  <p>No additional images available for this tour.</p>
+)}
     </div>
 
     <div className="tour-info-row">
@@ -119,6 +132,8 @@ const [date, setDate] = React.useState("");
     ${dest.price * guests}
   </span>
 </p>
+<br />
+
 
   <button 
     onClick={() =>
