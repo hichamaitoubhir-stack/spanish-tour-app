@@ -27,7 +27,7 @@ const destinacion = [
    oldPrice: 350,
    price: 250,
    specialOffer: true,
-   reviews: 59,
+   reviews: 169,
    images: [
         ourika1,
         ourika2,
@@ -102,6 +102,12 @@ const destinacion = [
    price: 280,
    specialOffer: false,
    reviews: 74,
+   images : [
+    ozoud,
+     rabat,
+      farming,
+       ourika,
+   ],
    description:
      "Discover the stunning Ouzoud Waterfalls, hike along the cascades, and see wild monkeys in their natural habitat.",
    

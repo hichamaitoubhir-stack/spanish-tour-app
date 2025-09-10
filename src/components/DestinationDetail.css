@@ -81,7 +81,18 @@
   align-items: center;
   gap: 5px;
 }
-
+.tour-info-row button{
+  color: #060e86;
+  padding: 8px 12px;
+  background-color: #FDBE3B;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+.tour-info-row h3:hover{
+  background-color: #E6542E;
+}
 /* ============boooking formula============ */
 
 .booking-formula {
@@ -110,6 +121,59 @@
   font-weight: bold;
   cursor: pointer;
 }
+/* ------------------model--------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-images {
+  display: flex;
+  flex-wrap: wrap;        /* allow wrapping if too many images */
+  gap: 10px;
+  justify-content: center; /* center row on smaller screens */
+}
+
+.modal-images img {
+  width: 300px;           /* fixed width */
+  height: 300px;          /* fixed height */
+  object-fit: cover;      /* maintain aspect ratio, crop excess */
+  border-radius: 8px;
+  flex-shrink: 0;         /* prevent shrinking */
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ------------model------------- */
 /* .booking-formula h2 {
   background: #000;
   color: #fff;
@@ -124,4 +188,53 @@
   .grid-booking {
     grid-template-columns: 1fr;
   }
+
+.tour-info-row {
+  display: flex;
+  flex-wrap: wrap;            /* allow wrapping */
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.85rem;
 }
+
+.tour-info-row h2 {
+  flex: 1 1 100%;             /* take full width if needed */
+  margin: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tour-info-row .price,
+.tour-info-row .reviews {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.tour-info-row button {
+  flex: 1 1 100%;              /* wrap button to new line */
+  text-align: center;          /* center button content */
+  margin-top: 6px;             /* spacing from previous row */
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tour-info-row button:hover {
+  background: #d35400;
+}
+
+
+/* *{outline: 1px solid red;} */
+}
+
+

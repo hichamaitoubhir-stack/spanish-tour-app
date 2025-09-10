@@ -8,13 +8,14 @@ import { FaClock, FaMapMarkerAlt, FaRoute, FaUserFriends, FaCar } from "react-ic
 import TourDetails from "./Tourdetails";
 
 
-export default function DestinationDetail({ destinacion }) {
+ function DestinationDetail({ destinacion }) {
 
 const [name, setName] = React.useState("");
 const [phone, setPhone] = React.useState("");
 const [guests, setGuests] = React.useState(1);
 const [date, setDate] = React.useState("");
 
+const [showModal, setShowModal] = React.useState(false);
 
 
 
@@ -69,15 +70,36 @@ const [date, setDate] = React.useState("");
 ) : (
   <p>No additional images available for this tour.</p>
 )}
-    </div>
-
-    <div className="tour-info-row">
-      <h2>{dest.name}</h2>
-       <span className="price"> Price: ${dest.price}</span>
-      <div className="reviews">
-        ⭐⭐⭐⭐☆ ({dest.reviews})
+  </div>
+{/* ----------model----------- */}
+{showModal && (
+  <div className="modal-overlay" onClick={() => setShowModal(false)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <button className="close-btn" onClick={() => setShowModal(false)}>✖</button>
+      <div className="modal-images">
+        {dest.images.map((img, i) => (
+          <img key={i} src={img} alt={`${dest.name} ${i + 1}`} />
+        ))}
       </div>
     </div>
+  </div>
+)}
+{/* --------------model--------------- */}
+   <div className="tour-info-row">
+  <h2>{dest.name}</h2>
+  <span className="price">  <span style={{color :"#000"}}>Precio</span> : ${dest.price}</span>
+  <div className="reviews">
+    ⭐⭐⭐⭐☆ ({dest.reviews})
+  </div>
+  <div>
+    <button
+     
+      onClick={() => setShowModal(true)}
+    >
+      Ver más fotos...
+    </button>
+  </div>
+</div>
   </div>
 
 
@@ -166,3 +188,6 @@ const [date, setDate] = React.useState("");
     </>
   );
 }
+
+
+export default DestinationDetail
