@@ -6,7 +6,7 @@ import WhatsAppButton from "../whatsAppButton";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import { FaClock, FaMapMarkerAlt, FaRoute, FaUserFriends, FaCar } from "react-icons/fa";
 import TourDetails from "./Tourdetails";
-
+import Stars from "../stars";
 
  function DestinationDetail({ destinacion }) {
 
@@ -89,8 +89,8 @@ const [showModal, setShowModal] = React.useState(false);
   <h2>{dest.name}</h2>
   <span className="price">  <span style={{color :"#000"}}>Precio</span> : ${dest.price}</span>
   <div className="reviews">
-    ⭐⭐⭐⭐☆ ({dest.reviews})
-  </div>
+  <Stars rating={5} /> ({dest.reviews})
+</div>
   <div>
     <button
      
@@ -111,7 +111,7 @@ const [showModal, setShowModal] = React.useState(false);
 
   
    <div className="booking-formula">
-  {/* <h2>Reserva este tour</h2> */}
+  <h2>Reserva este tour</h2> 
 
   <label htmlFor="name">Nombre:</label>
   <input

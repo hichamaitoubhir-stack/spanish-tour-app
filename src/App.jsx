@@ -20,6 +20,8 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { FileText, CheckCircle, XCircle, Map, Scale , Info, ShieldAlert, ScrollText } from "lucide-react";
 import { FaHome, FaUmbrellaBeach, FaHiking, FaCity, FaEnvelope } from "react-icons/fa";
 import "./styles/Topbar.css";
+import Stars from "./stars";
+import ReactCountryFlag from "react-country-flag";
 
 
 
@@ -27,6 +29,7 @@ import "./styles/Topbar.css";
 function App() {
   const destinations = getDestinations();
   const [open, setOpen] = React.useState(false);
+  const [lang, setLang] = React.useState("ES");
 
  function scrollToSection(e, id) {
   e.preventDefault();
@@ -57,6 +60,12 @@ function handleSelect(item) {
       <section className="header">
         {/* --------- Top Bar --------- */}
       <div className="top-bar">
+ 
+
+
+
+
+
   <div className="left-section">
     {/* Search Box */}
     <SearchBox 
@@ -71,7 +80,10 @@ function handleSelect(item) {
     {/* Phone Section */}
     <div className="phone-section">
        <FaWhatsapp className="icon whatsapp" />
+       <div className="whatsapp-grid">
         <span>+212 606 125 022</span>
+        <p>Siempre Disponsible</p>
+        </div>
     </div>
 
     {/* Instagram */}
@@ -79,6 +91,8 @@ function handleSelect(item) {
       <FaInstagram className="icon instagram" />
     </div>
   </div>
+    {/* Language icons */}
+  
 </div>
 
 
@@ -188,7 +202,7 @@ function handleSelect(item) {
                       {/* ✅ Added meta info under image */}
                       <div className="card-meta">
                         <span className="duration">⏱ {dest.duration}</span>
-                        <span className="stars">⭐⭐⭐⭐⭐ {dest.reviews} reseñas</span>
+                        <span className="stars"><Stars rating={4} />  {dest.reviews} reseñas</span>
                       </div>
 
                       <p className="destination-description">{dest.description}</p>

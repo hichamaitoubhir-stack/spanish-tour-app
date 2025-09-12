@@ -1,5 +1,6 @@
 .top-bar {
-  background-color: #0D1A26;
+ 
+  background-color: #fff;
   width: 90%;
   display: flex;
   justify-content: flex-end; /* push everything to the right */
@@ -25,10 +26,12 @@ box-shadow: 3px 0px 12px rgba(0,0,0,0.08);
 
 /* Search input wrapper */
 .top-bar .search-container {
+ 
   position: relative;
   display: flex;
   align-items: center;
 }
+
 
 
 
@@ -46,12 +49,13 @@ box-shadow: 3px 0px 12px rgba(0,0,0,0.08);
   display: inline-block;
   animation: pulse 1.8s infinite ease-in-out;
   background-color: #fff;
+  cursor: pointer;
 }
 .top-bar  .instagram {
   color: #0e0d0d;
   font-size: 28px;
   display: inline-block;
-  animation: pulse 1.8s infinite ease-in-out;
+
 }
 
 @keyframes pulse {
@@ -64,47 +68,77 @@ box-shadow: 3px 0px 12px rgba(0,0,0,0.08);
 }
 .top-bar .phone-section span {
   color: #000; /* WhatsApp green */
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
+  font-size: 20px;
+  font-weight: 500;
 
 }
 
 /* Instagram */
 .top-bar .instagram-section .instagram {
   font-size: 25px;
-  background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
    padding-top: 3px;
+   color: #181618;
+   cursor: pointer;
   
 }
 
 
+
+.whatsapp-grid {
+  display: flex;
+  flex-direction: column;
+  line-height: 1; /* make lines tight */
+}
+
+.whatsapp-grid span,
+.whatsapp-grid p {
+  margin: 0;
+  padding: 0;
+}
+.whatsapp-grid p{
+  font-size: 12px;
+}
+
+
+
+/* ------------------responsive----------- */
 
 @media (max-width: 600px) {
-  .phone-section span {
-    display: none;
+  /* Hide WhatsApp/phone */
+  .top-bar .phone-section {
+    display: none !important;
   }
 
-.top-bar {
-    width: 55%;
+  /* Keep the others aligned to the right */
+  .top-bar {
+    justify-content: flex-end;
+    padding: 10px 16px; /* reduce padding for small screens */
+  }
+
+  .top-bar .social-icons {
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .top-bar .search-container,
+  .top-bar .search-box {
+    flex: 0 1 auto;
+    max-width: 250px;
+  }
+
+  .top-bar .instagram-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 7px;
-    box-shadow: 7px 0px 12px rgba(0,0,0,0.08);
-    /* border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px; */
-   
-}
-.top-bar .phone-section .whatsapp {
-  padding-bottom: 1px;
-  color: #25d366;
-  font-size: 28px;
-  display: inline-block;
-  
-  
-}
-
+    justify-content: flex-end;
+  }
+ 
+  .top-bar .instagram-section .instagram {
+  font-size: 35px;
+   padding-top: 3px;
+   color: #a3610a;
   
 
+  
 }
+}
+

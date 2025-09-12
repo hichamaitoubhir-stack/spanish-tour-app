@@ -1,6 +1,6 @@
 import "./styles/Reviews.css";
-
-export default function Reviews() {
+import React from "react";
+export default function Reviews({Reviews}) {
   const reviews = [
     {
       id: 1,
@@ -57,37 +57,75 @@ export default function Reviews() {
       avatar: "https://i.pravatar.cc/100?img=30",
     },
   ];
+ const [startIndex, setStartIndex] = React.useState(0);
+  const reviewsPerPageDesktop = 3;
 
+  const handlePrev = () => {
+    setStartIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleNext = () => {
+    setStartIndex((prev) => Math.min(prev + 1, reviews.length - 1));
+  }
   return (
 <>
 <div className="review">
     <div className="review-title ">
       <h2>Que dicen los viajeros sobre Descubre Desierto</h2>
-      
     </div>
+  
+    <div className="reviews-wrapper">
+      {/* Left Button */}
+      <button
+        className="nav-btn left"
+        onClick={handlePrev}
+        disabled={startIndex === 0}
+      >
+        ◀
+      </button>
 
-    <div className="reviews-container">
-      {reviews.map((r) => (
-        <div className="review-card" key={r.id}>
-          {/* Stars */}
-          <div className="review-stars">
-            {"★".repeat(r.rating)}
-            {"☆".repeat(5 - r.rating)}
-          </div>
-
-          <h3 className="review-title">{r.title}</h3>
-          <p className="review-text">{r.text}</p>
-
-          <div className="review-footer">
-            <img src={r.avatar} alt={r.user} className="review-avatar" />
-            <div>
-              <h4 className="review-user">{r.user}</h4>
-              <span className="review-date">{r.date}</span>
+      {/* Reviews Container */}
+      <div className="reviews-container">
+        {reviews
+          .slice(startIndex, startIndex + 3)
+          .map((r, index) => (
+            <div
+              className={`review-card ${
+                window.innerWidth <= 600
+                  ? index === 0
+                    ? "active"
+                    : "hidden"
+                  : ""
+              }`}
+              key={r.id}
+            >
+              <div className="review-header">
+                <img src={r.avatar} alt={r.user} className="review-avatar" />
+                <div className="review-user-info">
+                  <h4 className="review-user">{r.user}</h4>
+                  <span className="review-date">{r.date}</span>
+                  <div className="review-stars">
+                    {"★".repeat(r.rating)}
+                    {"☆".repeat(5 - r.rating)}
+                  </div>
+                </div>
+              </div>
+              <h3 className="review-title">{r.title}</h3>
+              <p className="review-text">{r.text}</p>
             </div>
-          </div>
-        </div>
-      ))}
+          ))}
+      </div>
+
+      {/* Right Button */}
+      <button
+        className="nav-btn right"
+        onClick={handleNext}
+        disabled={startIndex >= reviews.length - 1}
+      >
+        ▶
+      </button>
     </div>
+    
     </div>
     </>
   );

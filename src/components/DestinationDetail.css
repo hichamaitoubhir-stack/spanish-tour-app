@@ -81,6 +81,13 @@
   align-items: center;
   gap: 5px;
 }
+.stars {
+ 
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
 .tour-info-row button{
   color: #060e86;
   padding: 8px 12px;
@@ -187,6 +194,7 @@
 @media (max-width: 900px) {
   .grid-booking {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
 .tour-info-row {
@@ -200,14 +208,6 @@
   font-size: 0.85rem;
 }
 
-.tour-info-row h2 {
-  flex: 1 1 100%;             /* take full width if needed */
-  margin: 0;
-  font-size: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 .tour-info-row .price,
 .tour-info-row .reviews {
@@ -215,6 +215,7 @@
   font-size: 0.8rem;
   white-space: nowrap;
 }
+
 
 .tour-info-row button {
   flex: 1 1 100%;              /* wrap button to new line */
